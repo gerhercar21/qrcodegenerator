@@ -1,0 +1,83 @@
+body {
+    background-color: #f6f6f6;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    font-family: univia-pro;
+    color: #191654;
+}
+
+button {
+    margin-top: 1.8rem;
+    height: 2rem;
+    font-family: univia-pro;
+    color: white;
+    background-color: #816797;
+    border: none;
+    width: 10%;
+    border-radius: 5px;
+}
+
+button:hover {
+    opacity: .9;
+}
+
+input {
+    width: 25%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: gray;
+    margin-top: 1rem;
+}
+
+.userinput {
+    font-size: 1.3rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.qrcode-final {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+@font-face {
+    font-family: univia-pro;
+    src: url(/UniviaPro-Medium.otf);
+}
+
+@media (max-width: 575px) {
+    .heading {
+        margin-top: 3rem;
+    }
+    input {
+        width: 75%;
+    }
+    h1 {
+        font-size: 2rem;
+
+    }
+    button {
+        width: 50%;
+        height: 4vh;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+    .heading {
+        margin-top: 3rem;
+    }
+    input {
+        width: 75%;
+    }
+    h1 {
+        font-size: 2rem;
+
+    }
+    button {
+        width: 30%;
+        height: 8vh;
+    }
+}

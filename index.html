@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/favicon/favicon-32x32.png">
+    <link rel="stylesheet" type="text/css" href="./main.css" />
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+    <script src="qrcode.min.js"></script>
+	<title>Generar códigos QR</title>
+</head>
+
+<body>
+    <section class="heading">
+        <h1>Genera tus códigos QR</h1>
+      </section>
+      <section class="userinput">
+          <label>Agrega el link o palabras: <br>
+            <input type="text" name="intext" id="intext" placeholder="https://www.hellmann.com/es">
+          </label><br>
+          <button type="submit" id="btngenera">Generar</button>
+      </section>
+      <section>
+        <div class="qrcode-final" style="display: visible;"></div>
+      </section>
+      <style>
+        section{text-align: center;}
+        .heading h2{font-size: 18px;}
+        #btngenera, #dscr{margin: 10px auto;padding: 5px 10px;cursor: pointer;}
+        .qrcode-final img{margin: 15px auto;}
+      </style>
+	<script>
+let btnsubmit = document.getElementById("btngenera"), 
+        qrfinal = document.querySelector(".qrcode-final"),
+        qr_canvas = document.querySelector("canvas"),
+        user_input = document.getElementById("intext");
+        btnsubmit.onclick = function(){
+      
+      if(user_input.value != ""){
+        if(qrfinal.childElementCount == 0){
+          genera(user_input);  
+        } else { 
+          qrfinal.innerHTML = "";          
+          genera(user_input);
+        }
+      } else{
+        qrfinal.style = "display none";
+      }
+    }
+    function genera(user_input){
+      qrfinal.style = "";
+
+      var qrcode = new QRCode(qrfinal, {
+        text: `${user_input.value}`,
+        width: 200,
+        height: 200,
+        colorDark: "#000000",
+        colorLight: "#ffffff00",
+        correctLevel: QRCode.CorrectLevel.H
+      });
+
+      let descargar = document.createElement("button");
+      descargar.setAttribute("id", "dscr");
+      qrfinal.appendChild(descargar);
+
+      let qr_a = document.createElement("a");
+      qr_a.setAttribute("download", "qrcode_link.png");
+      qr_a.innerText = "Descargar";
+      descargar.appendChild(qr_a);
+      
+      let qr_ima = document.querySelector(".qrcode-final img");
+      if(qr_ima.getAttribute("src") == null){
+          setTimeout(() => {
+            qr_a.setAttribute("href", `${qr_canvas.toDataURL()}`);
+          }, 300);
+        } else{
+          setTimeout(() => {
+            qr_a.setAttribute("href", `${qr_ima.getAttribute("src")}`);
+        }, 300);
+      }
+    }
+	</script>
+</body>
+
+</html>
