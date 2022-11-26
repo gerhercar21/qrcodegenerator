@@ -28,8 +28,8 @@
         <h1>Genera tus códigos QR</h1>
       </section>
       <section class="userinput">
-          <label>Agrega el link o palabras: <br>
-            <input type="text" name="intext" id="intext" placeholder="https://www.hellmann.com/es">
+          <label>Agrega el link o e-mail: <br>
+            <input type="text" name="intext" id="intext" placeholder="Example: gerardohdezcarrera.org">
           </label><br>
           <button type="submit" id="btngenera">Generar</button>
       </section>
@@ -47,7 +47,8 @@ let btnsubmit = document.getElementById("btngenera"),
         qrfinal = document.querySelector(".qrcode-final"),
         qr_canvas = document.querySelector("canvas"),
         user_input = document.getElementById("intext");
-        btnsubmit.onclick = function(){
+
+btnsubmit.onclick = function(){
       
       if(user_input.value != ""){
         if(qrfinal.childElementCount == 0){
@@ -60,7 +61,8 @@ let btnsubmit = document.getElementById("btngenera"),
         qrfinal.style = "display none";
       }
     }
-    function genera(user_input){
+
+function genera(user_input){
       qrfinal.style = "";
 
       var qrcode = new QRCode(qrfinal, {
@@ -82,7 +84,7 @@ let btnsubmit = document.getElementById("btngenera"),
       descargar.appendChild(qr_a);
       
       let qr_ima = document.querySelector(".qrcode-final img");
-      if(qr_ima.getAttribute("src") == null){
+      if(qr_ima.getAttribute("src") == ''){
           setTimeout(() => {
             qr_a.setAttribute("href", `${qr_canvas.toDataURL()}`);
           }, 300);
