@@ -39,8 +39,8 @@
       <style>
         section{text-align: center;}
         .heading h2{font-size: 18px;}
-        #btngenera, #dscr{margin: 10px auto;padding: 5px 10px;cursor: pointer;}
-        .qrcode-final img{margin: 15px auto;}
+        #btngenera{margin: 10px auto;padding: 5px 10px;cursor: pointer;}
+        .qrcode-final img{margin: 2rem auto;}
       </style>
 	<script>
 let btnsubmit = document.getElementById("btngenera"), 
@@ -74,7 +74,7 @@ function genera(user_input){
         correctLevel: QRCode.CorrectLevel.H
       });
 
-      let descargar = document.createElement("button");
+      let descargar = document.createElement("a");
       descargar.setAttribute("id", "dscr");
       qrfinal.appendChild(descargar);
 

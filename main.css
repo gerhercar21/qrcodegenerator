@@ -18,11 +18,23 @@ button {
     border: none;
     width: 10%;
     border-radius: 5px;
+    font-size: 16px;
 }
 
 a {
     text-decoration: none;
     color: white;
+    font-family: univia-pro;
+    color: white;
+    background-color: #816797;
+    border: none;
+    border-radius: 5px;
+    padding: .6rem 1rem;
+    font-size: 16px;
+}
+
+a:hover {
+    opacity: .9;
 }
 
 button:hover {
