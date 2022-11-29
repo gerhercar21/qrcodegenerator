@@ -9,6 +9,10 @@ h1 {
     color: #191654;
 }
 
+label {
+    padding-bottom: 40rem;
+}
+
 button {
     margin-top: 1.8rem;
     height: 2rem;
