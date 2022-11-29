@@ -2,6 +2,18 @@
 <html lang="en">
 
 <head>
+	<script language="JavaScript" type="text/javascript">
+     
+    var bPreguntar = true;
+     
+    window.onbeforeunload = preguntarAntesDeSalir;
+     
+    function preguntarAntesDeSalir()
+    {
+      if (bPreguntar)
+        return "¿Seguro que quieres salir? Asegúrate de guardar tus QR.";
+    }
+</script>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -95,10 +107,6 @@ function genera(user_input){
         }, 300);
       }
     }
-	</script>
-	<script>
-		if (window.confirm("¿Seguro que quieres salir? Asegúrate de haber descargado tus códigos QR.")) {
-		}
 	</script>
 </body>
 
