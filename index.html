@@ -29,10 +29,10 @@
       </section>
       <section class="userinput"><br>
           <label>Agrega el link o e-mail: <br>
-            <input type="text" name="intext" id="intext" placeholder="Example: gerardohdezcarrera.org">
+            <input type="text" name="intext" class="input" id="intext" placeholder="Example: gerardohdezcarrera.org">
           </label><br><br>
           <a onClick="window.location.reload()" href="" style="color:black; background-color: #f6f6f6; border: solid 2px black;">Limpiar búsqueda</a>
-          <button type="submit" id="btngenera">Generar QR</button>
+          <button class="button" type="submit" id="btngenera">Generar QR</button>
       </section>
       <section>
         <div class="qrcode-final" style="display: visible;"></div>
@@ -95,6 +95,19 @@ function genera(user_input){
         }, 300);
       }
     }
+	</script>
+	<script>
+		let input = document.querySelector(".input");
+		let button = document.querySelector(".button");
+		button.disabled = true;
+		input.addEventListener("change", stateHandle);
+		function stateHandle() {
+		  if (document.querySelector(".input").value === "") {
+		    button.disabled = true; 
+		  } else {
+		    button.disabled = false;
+		  }
+		}
 	</script>
 </body>
 
