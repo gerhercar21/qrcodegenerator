@@ -96,6 +96,18 @@ function genera(user_input){
       }
     }
 	</script>
+<script>
+     
+    var bPreguntar = true;
+     
+    window.onbeforeunload = preguntarAntesDeSalir;
+     
+    function preguntarAntesDeSalir()
+    {
+      if (bPreguntar)
+        return "¿Seguro que quieres salir?";
+    }
+	</script>
 </body>
 
 </html>
