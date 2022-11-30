@@ -53,6 +53,7 @@ input {
     padding: .5rem;
     margin-top: 1rem;
     border-radius: 5px;
+    autocapitalize: none;
 }
 
 .userinput {
