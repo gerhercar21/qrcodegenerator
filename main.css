@@ -1,16 +1,13 @@
 body {
     background-color: #f6f6f6;
     text-align: center;
+    overflow: hidden;
 }
 
 h1 {
     font-size: 3rem;
     font-family: univia-pro;
     color: #191654;
-}
-
-label {
-    padding-bottom: 40rem;
 }
 
 button {
@@ -53,6 +50,11 @@ input {
     padding: .5rem;
     margin-top: 1rem;
     border-radius: 5px;
+}
+
+#mensaje {
+    display: block;
+    margin-bottom: 2rem;
 }
 
 .userinput {
